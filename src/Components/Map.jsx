@@ -20,7 +20,8 @@ function Map() {
         position:{lat},{lng}{" "}
       </h1>
       <button
-        onClick={() => {
+        onClick={(event) => {
+          event.stopPropagation()
           setSearchParams({ lat: "hazem", lng: "Mahmoud" });
         }}
       >

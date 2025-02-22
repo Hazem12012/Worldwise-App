@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import HomePage from "./Pages/Homepage";
@@ -11,28 +10,13 @@ import CityList from "./Components/CityList";
 import CountryList from "./Components/CuntryList";
 import City from "./Components/City";
 import Form from "./Components/Form";
-function App() {
-  const [cities, setCities] = useState([]);
-  const [isLoading, setisLoading] = useState(false);
-  const BASE_URL = "http://localhost:8000";
+import { CitiesProvider } from "./contexts/CitiesContext";
 
-  useEffect(function () {
-    async function fetchCities() {
-      try {
-        setisLoading(true);
-        const res = await fetch(`${BASE_URL}/cities`);
-        const data = await res.json();
-        setCities(data);
-      } catch {
-        alert("there was an error loading data...");
-      } finally {
-        setisLoading(false);
-      }
-    }
-    fetchCities();
-  }, []);
+
+function App() {
+
   return (
-    <div>
+    <CitiesProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -40,25 +24,22 @@ function App() {
           <Route path="Product" element={<Product />} />
           <Route path="Login" element={<Login />} />
           <Route path="app" element={<AppLayout />}>
-            <Route
-              index
-              element={<Navigate to="cities" replace/>}
-            />
+            <Route index element={<Navigate to="cities" replace />} />
             <Route
               path="cities"
-              element={<CityList cities={cities} isLoading={isLoading} />}
+              element={<CityList />}
             />
             <Route path="cities/:id" element={<City />} />
             <Route
               path="countries"
-              element={<CountryList cities={cities} isLoading={isLoading} />}
+              element={<CountryList />}
             />
             <Route path="form" element={<Form />} />
           </Route>
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
-    </div>
+    </CitiesProvider>
   );
 }
 
