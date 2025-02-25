@@ -17,6 +17,9 @@ function CityItem({ city }) {
       <Link
         className={`${styles.cityItem} ${id === currentCity.id ? styles["cityItem--active"] : ""}`}
         to={`${id}?lat=${position.lat}&lng=${position.lng}`}
+        onClick={(e)=>{
+
+        }}
       >
         <span className={styles.emoji}>{emoji || "🚩"}</span>
         <h3 className={styles.name}>{cityName}</h3>
