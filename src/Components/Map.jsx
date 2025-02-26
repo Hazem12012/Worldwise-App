@@ -13,7 +13,6 @@ import styles from "./Map.module.css";
 import Button from "./Button";
 import { useCities } from "../contexts/CitiesContext";
 import { useURLPosition } from "../hooks/useURLPosition";
-// issue
 import { useGeolocation } from "../hooks/useGeoLocation";
 
 function Map() {
@@ -22,22 +21,28 @@ function Map() {
   const [mapLat, mapLng] = useURLPosition();
 
   const [mapPosition, setMapPosition] = useState([30.033333, 31.233334]);
-  // const {
-  //   isLoading: isLoadingPosition,
-  //   position: geoLocationPosition,
-  //   getPosition,
-  // } = useGeolocation(); 
+  const {
+    isLoading: isLoadingPosition,
+    position: geoLocationPosition,
+    getPosition,
+  } = useGeolocation();
 
   useEffect(() => {
     if (mapLat && mapLng) {
       setMapPosition([mapLat, mapLng]);
     }
   }, [mapLat, mapLng]);
-  useEffect(() => {
-    if (geoLocationPosition) {
-      setMapPosition([geoLocationPosition.lat, geoLocationPosition.lng]);
-    }
-  }, [useGeolocation]);
+
+  //********** issue **********
+  // useEffect(() => {
+  //   if (geoLocationPosition)
+  //     setMapPosition([geoLocationPosition.lat, geoLocationPosition.lng]);
+  // }, [getPosition]);
+
+
+  // console.log(mapPosition);
+  console.log(geoLocationPosition);
+  console.log(geoLocationPosition.lat, geoLocationPosition.lng);
 
   return (
     <div className={styles.mapContainer}>
@@ -64,7 +69,7 @@ function Map() {
           </Marker>
         ))}
         <ChangeCenter position={mapPosition} />
-        {/* <DetectClick /> */}
+        <DetectClick />
       </MapContainer>
     </div>
   );

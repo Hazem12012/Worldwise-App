@@ -19,8 +19,8 @@ export function useGeolocation(defaultPosition = null) {
         setIsLoading(false);
       },
       (error) => {
-        setError(error.message);
-        setIsLoading(false);
+        console.error(error.message);
+        setIsLoading(true);
       }
     );
   }
