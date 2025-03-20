@@ -1,42 +1,6 @@
 {
   "cities": [
     {
-      "id": "6a08",
-      "cityName": "Giza",
-      "country": "Egypt",
-      "emoji": "🇪🇬",
-      "date": "2025-03-19T14:25:18.134Z",
-      "notes": "hazem",
-      "position": {
-        "lat": "28.9600886880068",
-        "lng": "29.729003906250004"
-      }
-    },
-    {
-      "id": "6f9e",
-      "cityName": "Cairo",
-      "country": "Egypt",
-      "emoji": "🇪🇬",
-      "date": "2025-03-19T14:25:26.785Z",
-      "notes": "test",
-      "position": {
-        "lat": "30.012030680358613",
-        "lng": "31.250610351562504"
-      }
-    },
-    {
-      "id": "035f",
-      "cityName": "Gaza",
-      "country": "Palestine, State of",
-      "emoji": "🇵🇸",
-      "date": "2025-03-19T14:25:39.496Z",
-      "notes": "the end",
-      "position": {
-        "lat": "31.511093352611937",
-        "lng": "34.457416534423835"
-      }
-    },
-    {
       "id": "c498",
       "cityName": "Madinah",
       "country": "Saudi Arabia",
@@ -70,6 +34,66 @@
       "position": {
         "lat": "28.362401735238237",
         "lng": "3.7133789062500004"
+      }
+    },
+    {
+      "id": "8f6d",
+      "cityName": "Giza",
+      "country": "Egypt",
+      "emoji": "🇪🇬",
+      "date": "2025-03-20T11:56:31.515Z",
+      "notes": "fwesf",
+      "position": {
+        "lat": "29.190532832317913",
+        "lng": "29.355468750628024"
+      }
+    },
+    {
+      "id": "82c8",
+      "cityName": "Emirdag",
+      "country": "Turkiye",
+      "emoji": "🇹🇷",
+      "date": "2025-03-20T12:01:37.810Z",
+      "notes": "ytjty",
+      "position": {
+        "lat": "38.805470223177466",
+        "lng": "31.398925781250004"
+      }
+    },
+    {
+      "id": "1933",
+      "cityName": "Gaza",
+      "country": "Palestine, State of",
+      "emoji": "🇵🇸",
+      "date": "2025-03-20T12:04:33.987Z",
+      "notes": "the first forever",
+      "position": {
+        "lat": "31.50948351057133",
+        "lng": "34.45587158203126"
+      }
+    },
+    {
+      "id": "c400",
+      "cityName": "Al Maḩallah al Kubra",
+      "country": "Egypt",
+      "emoji": "🇪🇬",
+      "date": "2025-03-20T12:05:32.343Z",
+      "notes": "my city",
+      "position": {
+        "lat": "30.970544333076077",
+        "lng": "31.171646118164066"
+      }
+    },
+    {
+      "id": "967a",
+      "cityName": "Kafr ash Shaykh",
+      "country": "Egypt",
+      "emoji": "🇪🇬",
+      "date": "2025-03-20T12:05:44.598Z",
+      "notes": "My college",
+      "position": {
+        "lat": "31.105861132362723",
+        "lng": "30.943679809570316"
       }
     }
   ]

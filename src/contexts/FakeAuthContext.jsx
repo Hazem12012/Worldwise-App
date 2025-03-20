@@ -3,13 +3,13 @@
 import { useContext, useReducer, createContext } from "react";
 
 
-const AuthContrext = createContext();
+const AuthContext = createContext();
 const initialState = {
     user: null,
     isAuthenticated: false,
 };
 function reduser(state, action) {
-    switch (CaretPosition.type) {
+    switch (action.type) {
         case "LOGIN": {
             return {
                 ...state,
@@ -21,7 +21,7 @@ function reduser(state, action) {
             return {
                 ...state,
                 user: null,
-                isAuthenticated: true,
+                isAuthenticated: false,
             };
         }
         default: {
@@ -35,8 +35,8 @@ function AuthProvider({ children }) {
         initialState
     );
     const FAKE_USER = {
-        name: "Jack",
-        email: "jack@example.com",
+        name: "Hazem",
+        email: "Hazem@example.com",
         password: "qwerty",
         avatar: "https://i.pravatar.cc/100?u=zz",
     };
@@ -49,7 +49,7 @@ function AuthProvider({ children }) {
         dispatch({ type: "LOGOUT" });
     }
     return (
-        <AuthContrext.Provider
+        <AuthContext.Provider
             value={{
                 user,
                 isAuthenticated,
@@ -57,15 +57,16 @@ function AuthProvider({ children }) {
                 logout,
             }}>
             {children}
-        </AuthContrext.Provider>
+        </AuthContext.Provider>
     );
 }
 
 function useAuth() {
-    context = useContext(AuthProvider);
+    const context = useContext(AuthContext);
     if (context === undefined) {
         throw new Error("AuthContext was used outside AuthProvider");
     }
+    return context;
 }
 
-export{ AuthProvider, useAuth };
+export { AuthProvider, useAuth };
