@@ -1,22 +1,22 @@
+/** @format */
+
 import { useEffect, useState } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
 
 import { useCities } from "../contexts/CitiesContext";
 import styles from "./City.module.css";
-import Spinner from './Spinner';
-import BackButton from './BackButton';
-
-
-
+import Spinner from "./Spinner";
+import BackButton from "./BackButton";
 
 function City() {
-
-
   const { getCity, currentCity, isLoading } = useCities();
   const { id } = useParams();
-  useEffect(function () {
-    getCity(id);
-  }, [id])
+  useEffect(
+    function () {
+      getCity(id);
+    },
+    [id, getCity]
+  );
   const formatDate = (date) =>
     new Intl.DateTimeFormat("en", {
       day: "numeric",
@@ -25,7 +25,7 @@ function City() {
     }).format(new Date(date));
 
   const { cityName, emoji, date, notes } = currentCity;
-  if (isLoading) return <Spinner />
+  if (isLoading) return <Spinner />;
   return (
     <div className={styles.city}>
       <div className={styles.row}>
@@ -53,17 +53,12 @@ function City() {
         <a
           href={`https://en.wikipedia.org/wiki/${cityName}`}
           target="_blank"
-          rel="noreferrer"
-        >
-          Check out {cityName} on Wikipedia &rarr;
+          rel="noreferrer">
+          Check out {cityName || "this"} on Wikipedia &rarr;
         </a>
       </div>
 
       <div>
-        {/* <button>
-          <Link to={"/app/cities"}>&larr; Go back</Link>
-        </button> */}
-        {/* Another way */}
         <BackButton />
       </div>
     </div>

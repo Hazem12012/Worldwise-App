@@ -34,21 +34,19 @@ function Map() {
   }, [mapLat, mapLng]);
 
   //********** issue **********
-  // useEffect(() => {
-  //   if (geoLocationPosition)
-  //     setMapPosition([geoLocationPosition.lat, geoLocationPosition.lng]);
-  // }, [getPosition]);
+  useEffect(() => {
+    geoLocationPosition &&
+      setMapPosition([geoLocationPosition.lat, geoLocationPosition.lng]);
+  }, [geoLocationPosition]);
 
-
-  // console.log(mapPosition);
-  console.log(geoLocationPosition);
-  console.log(geoLocationPosition.lat, geoLocationPosition.lng);
 
   return (
     <div className={styles.mapContainer}>
-      <Button type={"position"} onClick={getPosition}>
-        {isLoadingPosition ? "Loading ..." : "Use your position"}
-      </Button>
+      {!geoLocationPosition && (
+        <Button type={"position"} onClick={getPosition}>
+          {isLoadingPosition ? "Loading ..." : "Use your position"}
+        </Button>
+      )}
       <MapContainer
         center={mapPosition}
         zoom={6}
@@ -60,14 +58,15 @@ function Map() {
         />
         {cities.map((city) => (
           <Marker
-            position={[city.position.lat, city.position.lng]}
-            key={city.id}>
+          position={[city.position.lat, city.position.lng]}
+          key={city.id}>
             <Popup>
               {city.cityName} <br />
               {city.notes}
             </Popup>
           </Marker>
-        ))}
+        ))
+        }
         <ChangeCenter position={mapPosition} />
         <DetectClick />
       </MapContainer>
@@ -77,6 +76,7 @@ function Map() {
 function ChangeCenter({ position }) {
   const map = useMap();
   map.setView(position);
+  return null;
 }
 
 function DetectClick() {

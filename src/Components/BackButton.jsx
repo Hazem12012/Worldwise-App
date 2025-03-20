@@ -2,18 +2,24 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import Button from './Button';
 
-function BackButton() {
+
+function BackButton({ type }) {
     const navigate = useNavigate();
+
     return (
         <Button
+
             type="back"
-            onClick={(e) => {
+            onClick={type === "form" ? (e) => {
+                e.preventDefault();
+                navigate(`/app/cities`)
+            } : (e) => {
                 e.preventDefault();
                 navigate(-1);
             }}
         >
             {" "}
-            &larr; Back
+            &larr;Back
         </Button>
     )
 }

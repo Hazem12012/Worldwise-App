@@ -1,40 +1,76 @@
 {
   "cities": [
     {
-      "cityName": "Madrid",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2027-07-15T08:22:53.976Z",
-      "notes": "",
+      "id": "6a08",
+      "cityName": "Giza",
+      "country": "Egypt",
+      "emoji": "🇪🇬",
+      "date": "2025-03-19T14:25:18.134Z",
+      "notes": "hazem",
       "position": {
-        "lat": 40.46635901755316,
-        "lng": -3.7133789062500004
-      },
-      "id": 17806751
+        "lat": "28.9600886880068",
+        "lng": "29.729003906250004"
+      }
     },
     {
-      "cityName": "Berlin",
-      "country": "Germany",
-      "emoji": "🇩🇪",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Amazing 😃",
-      "position": {
-        "lat": 52.53586782505711,
-        "lng": 13.376933665713324
-      },
-      "id": 98443197
-    },
-    {
+      "id": "6f9e",
       "cityName": "Cairo",
       "country": "Egypt",
       "emoji": "🇪🇬",
-      "date": "2027-10-31T15:59:59.138Z",
-      "notes": "My favorite city so far!💪",
+      "date": "2025-03-19T14:25:26.785Z",
+      "notes": "test",
       "position": {
-        "lat": 30.033333,
-        "lng": 31.233334
-      },
-      "id": 7393038555
+        "lat": "30.012030680358613",
+        "lng": "31.250610351562504"
+      }
+    },
+    {
+      "id": "035f",
+      "cityName": "Gaza",
+      "country": "Palestine, State of",
+      "emoji": "🇵🇸",
+      "date": "2025-03-19T14:25:39.496Z",
+      "notes": "the end",
+      "position": {
+        "lat": "31.511093352611937",
+        "lng": "34.457416534423835"
+      }
+    },
+    {
+      "id": "c498",
+      "cityName": "Madinah",
+      "country": "Saudi Arabia",
+      "emoji": "🇸🇦",
+      "date": "2025-03-19T14:25:48.422Z",
+      "notes": "fdp[wek",
+      "position": {
+        "lat": "24.367113562651276",
+        "lng": "39.60571289062501"
+      }
+    },
+    {
+      "id": "fbb6",
+      "cityName": "Hun",
+      "country": "Libya",
+      "emoji": "🇱🇾",
+      "date": "2025-03-19T14:26:14.671Z",
+      "notes": "wfwfge",
+      "position": {
+        "lat": "26.58852714730864",
+        "lng": "17.929687500000004"
+      }
+    },
+    {
+      "id": "260d",
+      "cityName": "Foggaret Ezzaou",
+      "country": "Algeria",
+      "emoji": "🇩🇿",
+      "date": "2025-03-19T14:26:20.265Z",
+      "notes": "sg",
+      "position": {
+        "lat": "28.362401735238237",
+        "lng": "3.7133789062500004"
+      }
     }
   ]
 }

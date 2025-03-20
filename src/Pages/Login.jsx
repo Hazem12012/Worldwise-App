@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./Login.module.css";
+import Buuton from "../Components/Button";
 import PageNav from "../Components/PageNav";
 
 
@@ -8,6 +9,10 @@ export default function Login() {
   // PRE-FILL FOR DEV PURPOSES
   const [email, setEmail] = useState("jack@example.com");
   const [password, setPassword] = useState("qwerty");
+  function handleClick(e) {
+    e.preventDefault()
+
+  }
 
   return (
     <main className={styles.login}>
@@ -34,7 +39,7 @@ export default function Login() {
         </div>
 
         <div>
-          <button className={styles.btn}>Login</button>
+          <Buuton type="primary" onClick={handleClick}>Login</Buuton>
         </div>
       </form>
     </main>
