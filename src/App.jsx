@@ -12,8 +12,8 @@ import CityList from "./Components/CityList";
 import CountryList from "./Components/CuntryList";
 import City from "./Components/City";
 import Form from "./Components/Form";
-import { CitiesProvider } from "./contexts/CitiesContext";
-import { AuthProvider } from "./contexts/FakeAuthContext";
+import { CitiesProvider } from "./contexts/CitiesContext"; //
+import { AuthProvider } from "./contexts/FakeAuthContext"; //
 import ProtectedRout from "./Pages/ProtectedRout.jsx";
 
 function App() {
