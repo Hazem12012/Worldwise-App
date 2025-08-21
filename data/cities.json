@@ -1,3 +1,16 @@
 {
-  "cities": []
+  "cities": [
+    {
+      "id": "5ab2",
+      "cityName": "Marsa Maţruḩ",
+      "country": "Egypt",
+      "emoji": "🇪🇬",
+      "date": "2025-08-21T22:09:44.952Z",
+      "notes": "",
+      "position": {
+        "lat": "29.783449456820605",
+        "lng": "27.641601562500004"
+      }
+    }
+  ]
 }
